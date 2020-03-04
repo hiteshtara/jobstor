@@ -1,18 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from './jobstor.png'
+import Footer from './footer'
 export const Layout = props => {
   return (
-    <div className="h-100 layout">
-      <nav className="d-flex align-items-center justify-content-center p-2 top-nav">
-        <Link to="/">Home</Link>
+    <div className='h-100 layout'>
+      <nav className='navbar navbar-expand-sm bg-dark navbar-dark'>
+        <a class='navbar-brand' href='#'>
+          <img src='//placehold.it/160x80&amp;text=logo' />
+        </a>
+
+        <ul className='navbar-nav'>
+          <li class='nav-item'>
+            <a class='nav-link' href='#'>
+              <Link to='/'>Home</Link>
+            </a>
+          </li>
+        </ul>
       </nav>
-      <div className="content d-flex flex-column align-items-center justify-content-center">
+      <div className='content d-flex flex-column align-items-center justify-content-center'>
         {props.children}
       </div>
-      <footer></footer>
+      <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
